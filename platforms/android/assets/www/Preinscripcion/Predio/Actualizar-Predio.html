@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>PERSONAL TECNICO</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../css/sweetalert.css">
+        <script src="../../js/predioJS.js"></script>
+        <script src="../../js/productorJS.js"></script>
+        <script  src="../../js/jquery-2.1.4.min.js"></script>
+        <script  src="../../js/bootstrap.js"></script>
+        <script src="../../js/sweetalert.min.js"></script>
+        <script src="../../js/loginJS.js"></script>
+        <script src="../../js/departamentoJS.js"></script>
+        <script src="../../js/municipioJS.js"></script>
+        
+        <script>
+            $( document ).ready(sesion(), btnback(), predioBuscar());
+        </script>
+    </head>
+    <body>
+        <div id="encabezado">
+            <h1> <span><img src="../../img/predio-lote.png" alt="" class="icono-h1"></span>Gesti&oacute;n de Predios</h1>
+        </div>
+
+        <div id="Frm-Actualizar-Predio"  class="pagina">
+            
+            <div data-role="content" class="table-stripe scrollable" id="container">
+                <div class="panel panel-primary">
+                <div class="panel-heading" style="text-align: center">
+                    <i class="glyphicon glyphicon-user "></i> 
+                    <i class="glyphicon glyphicon-edit"></i>
+                    ACTUALIZAR PREDIO
+                </div> 
+                <div class="panel-body">
+                    <div class="" style="text-align: center">
+                        <div class="col-sm-12">
+                            <button type="button" class="btn btn-outline btn-danger" title="REGRESAR" onclick="predioVolver()">
+                                <span class="glyphicon glyphicon-remove arrow"></span> CANCELAR
+                            </button>
+                            <button type="button" class="btn btn-success" onclick="predioActualizar()" title="GUARDAR">
+                               <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> GUARDAR
+                            </button>         
+                        </div>                          
+                    </div>
+                    <div class="row col-md-12">
+                        &nbsp;
+                    </div>
+                    <div class="formulario">
+                        <div class="row  form-group">      
+                                <label for="dep_id" class="col-sm-1 control-label">Departamento</label>
+                                <div class="col-sm-2"> 
+                                    <input type="hidden" name="dep_id" id="dep_id" value="" />
+                                    <input type="text" name="dep_descripcion" id="dep_descripcion" readonly="" value="" size="50" maxlength="100" class="form-control input-sm"/>
+                                </div>
+                                <label for="mun_id" class="col-sm-1 control-label">Municipio</label>
+                                <div class="col-sm-2">
+                                     <input type="hidden" name="mun_id" id="mun_id" value="" />
+                                     <input type="text" name="mun_descripcion" id="mun_descripcion" readonly="" value="" size="50" maxlength="100" class="form-control input-sm"/>
+                                </div>
+                                 <label for="per_cc" class="col-sm-1 control-label">Productor</label>
+                                 <div class="col-sm-3">
+                                    <select name="per_cc" id="per_cc"  class="form-control input-sm">
+
+                                    </select>                        
+                                </div>
+                            </div>
+                            <div class="row  form-group">      
+                                <label for="pre_id" class="col-sm-2 control-label">C&oacute;digo Predio</label>
+                                <div class="col-sm-2">
+                                    <input type="number" name="pre_id" id="pre_id" readonly="" value="" size="50"  class="form-control input-sm"/>
+                                    <input type="hidden" name="pre_id_aux" id="pre_id_aux" value=""  class="form-control input-sm"/>
+                                </div>
+                                <label for="pre_nombre" class="col-sm-2 control-label">Nombre</label>
+                                <div class="col-sm-2">
+                                    <input type="text" name="pre_nombre" id="pre_nombre" value="" size="50" maxlength="100" class="form-control input-sm"/>            
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label for="pre_area" class="col-sm-2 control-label">&Aacute;rea Total</label>
+                                <div class="col-sm-2">
+                                    <input type="number" name="pre_area" id="pre_area" value="" size="50"  class="form-control input-sm"/>
+                                </div>
+                                <label for="pre_lotes" class="col-sm-2 control-label">N&uacute;mero de Lotes</label>
+                                <div class="col-sm-2">
+                                    <input type="number" name="pre_lotes" id="pre_lotes" value="" size="50"  class="form-control input-sm"/>
+                                </div>
+                            </div> 
+                    </div>                      
+                </div> 
+            </div>
+            </div>
+            <div id="footer" data-position="fixed" data-role="footer" data-theme="a">
+                
+            </div>
+        </div>
+       
+    </body>
+</html>

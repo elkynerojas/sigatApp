@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>PERSONAL TECNICO</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../css/sweetalert.css">
+         <script  src="../../js/jquery-2.1.4.min.js"></script>
+        <script src="../../js/bootstrap.js"></script>
+        <script src="../../js/sweetalert.min.js"></script>
+        <script src="../../js/loginJS.js"></script>
+        <script src="../../js/trampaJS.js"></script>
+        <script>
+            $( document ).ready(sesion(), btnback());
+        </script>
+    </head>
+    <body>
+        
+        <div id="encabezado">
+            <h1> <span><img src="../../img/trampa.png" alt="" class="icono-h1"></span>Gesti&oacute;n de Trampas</h1>
+        </div>
+        <div id="navegacion" >
+            <div class="row">
+              <div class="col-lg-offset-3 col-sm-12">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="filtro" id="filtro" placeholder="Filtrar Resultados por..." aria-label="Filtrar">
+                  <span class="input-group-btn">
+                      <button id="btnBuscarProductor" class="btn btn-primary" type="button" onclick="trampaListar(document.getElementById('filtro').value)">
+                        <span class="glyphicon glyphicon-search"></span>
+                        Buscar
+                      </button>
+                  </span>
+                </div>
+              </div>
+            </div>
+        </div>
+        <br>
+        <div id="botonera">
+            <div class="btn-group-xs" role="group" aria-label="...">
+                <a href="../preinscripcion.html">
+                    <button type="button" class="btn btn-warning">
+                        <span><img src="../../img/atras.png" class=" botonimg"></span>
+                        Atr&aacute;s
+                    </button>
+                </a>  
+              
+                <a href="Frm-Registro-Trampa.html">
+                    <button type="button" class="btn btn-success" onclick="">
+                      <span><img src="../../img/agregar.png" class=" botonimg"></span>
+                      Nuevo
+                    </button>
+                </a>
+              
+            </div>
+        </div>
+        <br><br>
+        <div id="botonera">
+           <div class="btn-group-xs" role="group" aria-label="...">
+              <a href="javascript:trampaId('Historial-Trampa.html')">  
+                <button type="button" class="btn btn-primary">
+                  <span><img src="../../img/historial.png" class=" botonimg"></span>
+                  Historial
+                </button>
+              </a>
+              <a href="javascript:trampaId('Actualizar-Trampa.html')">
+                <button type="button" class="btn btn-primary">
+                    <span><img src="../../img/actualizar.png" class=" botonimg"></span>
+                    Actualizar
+                </button>
+              </a>
+            </div>
+        </div>
+        <br>
+        <div id="container">
+            <div class="col-md-12">
+                    <table border="1" id="tablaResultados">
+                        <thead class="pfila">
+                            <tr>
+                                <th>#</th>
+                                <th>No. Trampa</th>
+                                <th>Tipo Trampa</th>
+                                <th>Atrayente</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+            </div>
+            
+        </div>
+        
+        <!--<div id="botonera">
+           <div class="btn-group-xs" role="group" aria-label="...">
+                
+              <button type="button" class="btn btn-default">
+                  <span><img src="../../img/anterior.png" class=" botonimg"></span>
+                  P&aacute;gina Anterior</button>
+              <button type="button" class="btn btn-default">
+                  <span>P&aacute;gina Siguiente</span>
+                  <img src="../../img/siguiente.png" class=" botonimg">
+                  </button>
+            </div>
+        </div>-->
+        <footer>
+            
+        </footer>
+    </body>
+</html>

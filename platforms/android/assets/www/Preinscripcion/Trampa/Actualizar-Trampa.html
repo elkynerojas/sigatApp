@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>PERSONAL TECNICO</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<link rel="stylesheet" type="text/css" href="../../css/jquery.mobile-1.4.5.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.mobile.theme-1.4.5.min.css">-->
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../css/sweetalert.css">
+        <script src="../../js/productorJS.js"></script>
+        <script  src="../../js/jquery-2.1.4.min.js"></script>
+        <script src="../../js/sweetalert.min.js"></script>
+        <script src="../../js/loginJS.js"></script>
+        <script src="../../js/trampaJS.js"></script>
+        
+        <script>
+            $( document ).ready(sesion(), btnback(), trampaBuscar());
+        </script>
+    </head>
+    <body>
+        
+        <div id="encabezado">
+            <h1> <span><img src="../../img/trampa.png" alt="" class="icono-h1"></span>Gesti&oacute;n de Trampas</h1>
+        </div>
+        <div id="Frm-Actualizar-Trampa"  class="pagina">
+            
+            <div data-role="content" class="table-stripe scrollable" id="container">
+                <div class="panel panel-primary">
+                <div class="panel-heading" style="text-align: center">
+                    <i class="glyphicon glyphicon-user "></i> 
+                    <i class="glyphicon glyphicon-edit"></i>
+                    ACTUALIZAR TRAMPA
+                </div> 
+                <div class="panel-body">
+                    <div class="" style="text-align: center">
+                        <div class="col-sm-12">
+                            <button type="button" class="btn btn-outline btn-danger" title="REGRESAR" onclick="trampaVolver()">
+                                <span class="glyphicon glyphicon-remove arrow"></span> CANCELAR
+                            </button>
+                            <button type="button" class="btn btn-success" onclick="trampaActualizar()" title="GUARDAR">
+                               <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> GUARDAR
+                            </button>         
+                        </div>                          
+                    </div>
+                    <div class="row col-md-12">
+                        &nbsp;
+                    </div>
+                    <div class="formulario">
+                        <div class="row  form-group">
+                                <label for="tra_id" class="col-sm-2 control-label">N&uacute;mero Trampa</label>
+                                <div class="col-sm-1">
+                                    <input type="text" name="tra_id" id="tra_id" value="" size="50" maxlength="100" class="form-control input-sm"/>
+                                    <input type="hidden" name="tra_id_aux" id="tra_id_aux" value=""  />
+                                </div>
+                                   
+                                <label for="tit_id" class="col-sm-2 control-label">Tipo de Trampa</label>
+                                <div class="col-sm-1"> 
+                                    <select name="tit_id" id="tit_id"  class="form-control input-sm">
+                                        
+                                    </select>
+                                </div>
+                                <label for="atr_id" class="col-sm-1 control-label">Atrayente</label>
+                                <div class="col-sm-2"> 
+                                    <select name="atr_id" id="atr_id"  class="form-control input-sm">
+                                        <option value="null" selected=""></option>
+                                        <option value="1">Proteina Hidrolizada</option>
+                                        <option value="2">Tremidlure</option>
+                                        <option value="3">Methyl Eugenol</option>
+                                        <option value="4">Cuelure</option>
+                                    </select>
+                                </div>
+                                <label for="est_id" class="col-sm-1 control-label">Estado</label>
+                                <div class="col-sm-1"> 
+                                    <select name="est_id" id="est_id"  class="form-control input-sm">
+                                        
+                                    </select>
+                                </div>
+                            </div> 
+                    </div>                      
+                </div> 
+            </div>
+            </div>
+            <div id="footer" data-position="fixed" data-role="footer" data-theme="a">
+                
+            </div>
+        </div>
+       
+    </body>
+</html>

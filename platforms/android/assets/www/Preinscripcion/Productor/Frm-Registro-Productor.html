@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>PERSONAL TECNICO</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../css/sweetalert.css">
+        <script src="../../js/jquery-2.1.4.min.js"></script>
+        <script src="../../js/jquery.validate.min.js"></script>
+        <script src="../../js/sweetalert.min.js"></script>
+        <script src="../../js/loginJS.js"></script>
+        <script src="../../js/departamentoJS.js"></script>
+        <script src="../../js/municipioJS.js"></script>
+        <script src="../../js/productorJS.js"></script>
+        
+        <script>
+            $( document ).ready(main);
+            $( document ).ready(sesion(), btnback(), departamentoListar(""));
+            function main (){
+                sesion();
+                btnback();
+                departamentoListar("");
+                $("#btn-ins-productor").on("click",validarFormulario);
+            }
+            function validarFormulario(){
+            $("#Frm-Registro-Productor").tooltip({
+                    show: false,
+                    hide: false
+            });            
+            jQuery.validator.addMethod('soloLetras', function(value, element) {
+                return this.optional(element) || /^[a-z áãâäàéêëèíîïìóõôöòúûüùç]+$/i.test(value);
+            }, "Sólo recibe letras y espacios");
+            $("#form-ins-predio").validate({
+                rules:{
+                    per_cc:{
+                        required: true, number: true
+                    },
+                    per_nombre:{
+                        required: true, soloLetras: true
+                    },
+                    per_apellido:{
+                        required: true, soloLetras: true
+                    },
+                    
+                    gen_id:{
+                        required: true, number: true
+                    },
+                    dep_id:{
+                        required: true, number: true
+                    },
+                    mun_id:{
+                        required: true, number: true
+                    },
+                    per_direccion:{
+                      required: true, text: true
+                    },
+                    per_telefono:{
+                      required: true, number: true
+                    },
+                    per_correo:{
+                      required: true, text: true
+                    } 
+
+                },
+                messages:{
+                    per_cc:{
+                        required: "Campo obligatorio",
+                        number:"Campo obligatorio"
+                    },                  
+                    per_nombre:{
+                        required: "Campo obligatorio",
+                        soloLetras:"Solo Letras"
+                    },                  
+                    per_apellido:{
+                        required: "Campo requerido",
+                        soloLetras:"Solo Letras"
+                    },                  
+                    gen_id:{
+                        required: "Campo Obligatorio", 
+                        number: "campo obligatorio"
+                    },
+                    dep_id:{
+                        required: "Campo obligatorio", 
+                        number: "Campo Obligatorio"
+                    },
+                    mun_id:{
+                        required: "Campo Obligatorio",
+                        number: "Campo Obligatorio"
+                    },
+                    per_direccion:{
+                      required: "Campo Obligatorio", 
+                      text: "Dato no válido"
+                    },
+                    per_telefono:{
+                      required: "Campo Obligatorio", 
+                      number: true
+                    },
+                    per_correo:{
+                      required: "Campo Obligatorio", 
+                      text: "Dato no válido"
+                    } 
+                },
+                showErrors: function(map, list) {
+                    var focussed = document.activeElement;
+                    if (focussed && $(focussed).is("input, textarea")) {
+                            $(this.currentForm).tooltip("close", {
+                                    currentTarget: focussed
+                            }, true);
+                    }
+                    this.currentElements.removeAttr("title").removeClass("campo-error");
+                    $.each(list, function(index, error) {
+                            $(error.element).attr("title", error.message).addClass("campo-error");
+                    });
+                    if (focussed && $(focussed).is("input, textarea")) {
+                            $(this.currentForm).tooltip("open", {
+                                target: focussed
+                            });
+                    }
+                }       
+            });  
+        }
+        </script>
+    </head>
+    <body>
+
+        <div id="Frm-Registro-Productor"  class="pagina">
+           
+            <div  class="table-stripe scrollable" id="container">
+                <div class="panel panel-primary">
+                <div class="panel-heading" style="text-align: center">
+                    <span><img src="../../img/productor.png" class=" botonimg"></span> 
+                    
+                    NUEVO PRODUCTOR
+                    <span><img src="../../img/agregar.png" class=" botonimg"></span>
+                </div> 
+                <div class="panel-body">
+                    <form id="Frm-Registro-Productor" method="POST" action="javascript:productorInsertar()">
+                        <div class="" style="text-align: center">
+                            <div class="col-sm-12">
+                                <a href="Gestion-Productor.html">
+                                    <button type="button" class="btn btn-outline btn-danger" title="REGRESAR" onclick= ; return false;">
+                                        <span class="glyphicon glyphicon-remove arrow"></span> CANCELAR
+                                    </button>
+                                </a>
+                                <a href="#">
+                                    <button id="btn-ins-productor" type="submit" class="btn btn-success" title="GUARDAR REGISTRO">
+                                       <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> REGISTRAR
+                                    </button>
+                                </a>         
+                            </div>                          
+                        </div>
+                        <div class="row col-md-12">
+                            &nbsp;
+                        </div>
+                        <div class="formulario">
+                       
+                            <div class="row  form-group">
+                                <label for="per_cc" class="col-sm-2 control-label">N&uacute;mero de Documento</label>
+                                <div class="col-sm-2">
+                                    <input type="text" name="per_cc" id="per_cc" value="" size="20" maxlength="20" class="form-control input-sm" />
+                                </div>
+                            </div>                        
+
+                            <div class="row  form-group">
+                                <label for="per_nombre" class="col-sm-1 control-label">Nombre</label>
+                                <div class="col-sm-3">
+                                    <input type="text" name="per_nombre" id="per_nombre" value="" size="50" maxlength="100" class="form-control input-sm"/>
+                                </div>
+                                <label for="per_apellido" class="col-sm-1 control-label">Apellido</label>
+                                <div class="col-sm-3">
+                                    <input type="text" name="per_apellido" id="per_apellido" value="" size="50" maxlength="100" class="form-control input-sm"/>
+                                </div>     
+                                <label for="gen_id" class="col-sm-1 control-label">Genero</label>
+                                <div class="col-sm-2"> 
+                                    <select name="gen_id" id="gen_id"  class="form-control input-sm">
+                                        <option value="null" selected=""></option>
+                                        <option value="1">Masculino</option>
+                                        <option value="2" >Femenino</option>
+                                    </select>
+                                </div>
+                            </div>       
+                            <div class="row  form-group">      
+                                <label for="dep_id" class="col-sm-1 control-label">Departamento</label>
+                                <div class="col-sm-2"> 
+                                    <select name="dep_id" id="dep_id"  class="form-control input-sm" onchange="municipioListar(document.getElementById('dep_id').value,'')">
+
+                                    </select>
+                                </div>
+                                <label for="mun_id" class="col-sm-1 control-label">Municipio</label>
+                                <div class="col-sm-2"> 
+                                    <select name="mun_id" id="mun_id"  class="form-control input-sm">
+
+                                    </select>
+                                </div>
+                                 <label for="per_direccion" class="col-sm-1 control-label">Direcci&oacute;n</label>
+                                 <div class="col-sm-4">
+                                    <input type="text" name="per_direccion" id="per_direccion" value="" size="50" maxlength="100" class="form-control input-sm" />                        
+                                </div>
+                            </div>
+                            <div class="row  form-group">      
+                                <label for="per_telefono" class="col-sm-1 control-label">Tel&eacute;fono</label>
+                                <div class="col-sm-4">
+                                    <input type="text" name="per_telefono" id="per_telefono" value="" size="50" maxlength="50" class="form-control input-sm"/>
+                                </div>
+                                <label for="per_correo" class="col-sm-2 control-label">Correo electr&oacute;nico</label>
+                                <div class="col-sm-4">
+                                    <input type="text" name="per_correo" id="per_correo" value="" size="50" maxlength="100" class="form-control input-sm"/>            
+                                </div>
+                            </div>
+                        
+                        
+                        </div> 
+                    </form>                     
+                </div> 
+            </div> 
+            </div>
+            <div id="footer" data-position="fixed" data-role="footer" data-theme="a">
+                <div data-role="navbar" >
+                    <ul id="footerBtnListarPersona">
+                        
+                            
+                        <li>
+                            <a href="#" id="btnNuevo" class="ui-btn" data-rel="back">
+                                <span class="glyphicon glyphicon-remove arrow"></span> Cancelar
+                            </a>
+                        </li>
+                                 
+                        <li>
+                            <a href="javascript:productorInsertar()">
+                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Registrar
+                            </a>
+                        </li>  
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>

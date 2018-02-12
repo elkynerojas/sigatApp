@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+       <title>PERSONAL TECNICO</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/sweetalert.css">
+        <script src="../js/jquery-2.1.4.min.js"></script>
+        <script src="../js/sweetalert.min.js"></script>
+        <script src="../js/loginJS.js"></script>
+        <script>
+            $( document ).ready(sesion(), btnback());
+           
+           
+        </script>
+    </head>
+    <body >
+        <div  id="Principal-Tecnico" class="pagina">
+            <div id="encabezado">
+               <div class="col-12 row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <img src="../img/logo_sigat.png" class="img-header-sigat">
+                    </div>
+                    <div class="col-1"></div>            
+                </div>     
+
+             </div>
+            <div id="subtitulo" >
+               MEN&Uacute; DE T&Eacute;CNICO
+            </div>
+            <div id="cuerpo">
+
+                <div class="row col-xs-12">
+                   
+                    <div class="col-xs-6 fila-menu">
+                         <a href="../Preinscripcion/preinscripcion.html">
+                            <img src="../img/preinscripcion.png" class="icono-menu">
+                            <div class=" texto-menu">
+                                PREINSCRIPCION
+                            </div>
+                        </a>
+                    </div>
+                   
+                    <div class="col-xs-6 fila-menu">
+                        <a href="../Trabajo/trabajo.html">
+                            <img src="../img/trabajo-campo.png" class="icono-menu">
+                            <div class="texto-menu">
+                                TRABAJO DE CAMPO
+                            </div>
+                        </a>
+                    </div>
+                             
+                 </div>
+                
+                <div class="row col-xs-12">
+                    <div class="col-xs-6 fila-menu">
+                        <a href="../Alertas/Gestion-Alertas.html">
+                          <img src="../img/alerta.png" class="icono-menu">
+                          <div class="texto-menu">
+                           ALERTAS
+                          </div>
+                        </a>  
+                    </div>
+                   
+                    <div class="col-xs-6 fila-menu">
+                        <a href="javascript:validarcon()">
+                            <img src="../img/sincronizar.png" class="icono-menu">
+                          <div class="texto-menu">
+                            SINCRONIZAR
+                          </div>
+                        </a>  
+                    </div>
+                </div>
+                <div class="row col-xs-12">
+                     <div class="col-xs-6 fila-menu">
+                        <a href="Tecnico-Perfil.html">
+                          <img src="../img/usuario.png" class="icono-menu">
+                          <div class="texto-menu">
+                            <script>
+                                    javascript:document.write(sessionStorage.tec_nombre);
+                            </script>
+                          </div>
+                        </a>  
+                    </div>
+                    <div class="col-xs-6 fila-menu">
+                        <a href="Contacto.html">
+                          <img src="../img/contacto.png" class="icono-menu">
+                          <div class="texto-menu">
+                            CONTACTO
+                          </div>
+                        </a>  
+                    </div>
+                </div>
+                <div class="col-xs-12 fila-menu">
+                    <div>
+                        <a href="#" onclick="logout()">
+                            <img src="../img/cerrar-sesion.png" class="icono-menu" style="width: 10%; height: 10%">
+                            <div class="texto-menu">CERRAR SESI&Oacute;N</div>
+                        </a>  
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12" data-role="footer" style="text-align:center; margin-top: 4%; width:100%; font-size: 70%; background-color: #FFF; border: none">
+                <b>
+                    Instituto Colombiano Agropecuario<br>
+                    Instituto Superior de Educación Rural-ISER<br>
+                    Colombia,2017
+                </b>
+            </div>
+        </div>
+       
+    </body>
+</html>

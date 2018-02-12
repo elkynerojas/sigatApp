@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>PERSONAL TECNICO</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<link rel="stylesheet" type="text/css" href="../../css/jquery.mobile-1.4.5.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.mobile.theme-1.4.5.min.css">-->
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../css/sweetalert.css">
+        <script  src="../../js/jquery-2.1.4.min.js"></script>
+        <script src="../../js/sweetalert.min.js"></script>
+        <script src="../../js/loginJS.js"></script>
+        <script src="../../js/rutaJS.js"></script>
+        <script src="../../js/predioJS.js"></script>
+        <script src="../../js/inspeccionJS.js"></script>
+        <script>
+            $( document ).ready(sesion(), btnback(), rutaListar(""));
+        </script>
+    </head>
+    <body>
+        <div id="Frm-Registro-Inspeccion"  class="pagina"> 
+            <div  class="table-stripe scrollable" id="container">
+                <div class="panel panel-primary">
+                    <div class="panel-heading" style="text-align: center">
+                        <span><img src="../../img/inspeccion.png" class=" botonimg"></span> 
+                        NUEVA INSPECCION
+                        <span><img src="../../img/agregar.png" class=" botonimg"></span>
+                    </div> 
+                    <div class="panel-body">
+                        <div class="" style="text-align: center">
+                            <div class="col-sm-12">
+                                <a href="Gestion-Inspeccion.html">
+                                    <button type="button" class="btn btn-outline btn-danger" title="REGRESAR" onclick= "">
+                                        <span class="glyphicon glyphicon-remove arrow"></span> CANCELAR
+                                    </button>
+                                </a>
+                                <a href="javascript:inspeccionInsertar()">
+                                    <button type="button" class="btn btn-success" title="GUARDAR REGISTRO">
+                                       <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> REGISTRAR
+                                    </button>
+                                </a>         
+                            </div>                          
+                        </div>
+                        <div class="formulario">
+                            <div class="row  form-group">      
+                                <label for="rut_id" class="col-sm-1 control-label">SLECCIONE UNA RUTA</label>
+                                <div class="col-sm-2"> 
+                                    <select name="rut_id" id="rut_id"  class="form-control input-sm" onchange="predioListarxRuta(document.getElementById('rut_id').value)">
+                                    </select> 
+                                </div>     
+                            </div>
+                            <div class="row  form-group">      
+                                <label for="pre_id" class="col-sm-1 control-label">SLECCIONE UN PREDIO</label>
+                                <div class="col-sm-2"> 
+                                    <select name="pre_id" id="pre_id"  class="form-control input-sm" onchange="GetProductor(document.getElementById('pre_id').value)"></select> 
+                                </div>     
+                            </div>
+                            <div class="row  form-group">      
+                                <label for="per_cc" class="col-sm-1 control-label">SLECCIONE UN PRODUCTOR</label>
+                                <div class="col-sm-2"> 
+                                    <select name="per_cc" id="per_cc"  class="form-control input-sm"></select> 
+                                </div>     
+                            </div>
+                            <div class="row  form-group">      
+                                <label for="ins_estado" class="col-sm-1 control-label">RESULTADO</label>
+                                <div class="col-sm-2"> 
+                                    <select name="ins_estado" id="ins_estado" class="form-control input-sm">
+                                        <option value="null" selected=""></option>
+                                        <option value="true">SATISFACTORIO</option>
+                                        <option value="false">INSATISFACTORIO</option>
+                                    </select> 
+                                </div>     
+                            </div>
+                            <div class="row  form-group">      
+                                <label for="ins_fecha" class="col-sm-1 control-label">FECHA</label>
+                                <input type="date" name="ins_fecha" id="ins_fecha" class="form-control input-sm" >
+                            </div> 
+                            <div class="row  form-group">      
+                                <label for="ins_obs" class="col-sm-1 control-label">OBSERVACION</label>
+                                <textarea type="text" name="ins_obs" id="ins_obs" class="form-control input-sm"></textarea>
+                            </div>                             
+                        </div>                      
+                    </div> 
+                </div> 
+            </div>
+        </div>
+    </body>
+</html>

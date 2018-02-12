@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>PERSONAL TECNICO</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<link rel="stylesheet" type="text/css" href="../../css/jquery.mobile-1.4.5.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.mobile.theme-1.4.5.min.css">-->
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../css/sweetalert.css">
+        <script  src="../../js/jquery-2.1.4.min.js"></script>
+        <script src="../../js/sweetalert.min.js"></script>
+        <script src="../../js/loginJS.js"></script>
+        <script src="../../js/productorJS.js"></script>
+        <script src="../../js/predioJS.js"></script>
+        <script src="../../js/trampaJS.js"></script>
+        <script src="../../js/arbolJS.js"></script>
+        <script src="../../js/ubiJS.js"></script>
+        <script src="../../js/departamentoJS.js"></script>
+        <script src="../../js/municipioJS.js"></script>
+        <script src="../../js/rutaJS.js"></script>
+        
+        <script>
+            $( document ).ready(sesion(), btnback(), departamentoListar(""),trampaListarInactivas(sessionStorage.tec_id),municipioListar(sessionStorage.cac_id,''),arbolListar());
+        </script>
+    </head>
+    <body>
+        <div id="Frm-Registro-Trampeo"  class="pagina"> 
+            <div  class="table-stripe scrollable" id="container">
+                <div class="panel panel-primary">
+                    <div class="panel-heading" style="text-align: center">
+                        <span><img src="../../img/trampeo.png" class=" botonimg"></span> 
+                        UBICACIÓN DE NUEVA TRAMPA
+                        <span><img src="../../img/agregar.png" class=" botonimg"></span>
+                    </div> 
+                    <div class="panel-body">
+                        <div class="" style="text-align: center">
+                            <div class="col-sm-12">
+                                <a href="Gestion-Trampeo.html">
+                                    <button type="button" class="btn btn-outline btn-danger" title="REGRESAR" onclick= "">
+                                        <span class="glyphicon glyphicon-remove arrow"></span> CANCELAR
+                                    </button>
+                                </a>
+                                <a href="javascript:ubiInsertar()">
+                                    <button type="button" class="btn btn-success" title="GUARDAR REGISTRO">
+                                       <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> REGISTRAR
+                                    </button>
+                                </a>         
+                            </div>                          
+                        </div>
+                        <div class="formulario">
+                            <div class="row  form-group">
+                                <label for="tra_id" class="col-sm-1 control-label">Trampa</label>
+                                <div class="col-sm-2">
+                                    <select name="tra_id" id="tra_id"  class="form-control input-sm" onchange="trampaAsignarCampos()"></select>
+                                    <input type="hidden" name="atr_id" id="atr_id">
+                                    <input type="hidden" name="tit_id" id="tit_id">
+                                </div>
+                                <label for="ubi_fecha" class="col-sm-1 control-label">Fecha</label>
+                                <div class="col-sm-2">
+                                    <input type="date" name="ubi_fecha" id="ubi_fecha" class="form-control input-sm">
+                                </div>
+                                <label for="vig_id" class="col-sm-1 control-label">Vigilancia</label>
+                                <div class="col-sm-2">
+                                    <select name="vig_id" id="vig_id"  class="form-control input-sm">
+                                        <option value="" selected=""></option>
+                                        <option value="2">NATIVAS Y CERATITIS</option>
+                                        <option value="3">EX&Oacute;TICAS</option>
+                                    </select>
+                                </div> 
+                            </div>                        
+                            <div class="row  form-group">
+                                <label for="mun_id" class="col-sm-1 control-label">Municipio</label>
+                                <div class="col-sm-2">
+                                    <select name="mun_id" id="mun_id"  class="form-control input-sm" onchange="predioListarxMunicipio(document.getElementById('mun_id').value),
+                                        rutaBuscar(document.getElementById('mun_id').value)">       
+                                    </select>
+                                    <input type="hidden" name="rut_id" id="rut_id">
+                                    <input type="hidden" name="cod_ruta" id="cod_ruta">
+                                </div> 
+                                <label for="pre_id" class="col-sm-1 control-label">Predio</label>
+                                <div class="col-sm-2"> 
+                                    <select name="pre_id" id="pre_id"  class="form-control input-sm" 
+                                        onchange="GetProductor($('#pre_id').val())">        
+                                    </select>
+                                    <input type="hidden" name="prod_id" id="prod_id">
+                                </div>
+                                <label for="per_cc" class="col-sm-1 control-label">Productor</label>
+                                <div class="col-sm-2"> 
+                                    <select name="per_cc" id="per_cc"  class="form-control input-sm" ></select>
+                                </div>
+                            </div>       
+                                <div class="row  form-group">      
+                                    <label for="ubi_long" class="col-sm-1 control-label">Longitud</label>
+                                    <div class="col-sm-2"> 
+                                        <input type="text" name="ubi_long" id="ubi_long" value="" size="50" maxlength="100" class="form-control input-sm" /> 
+                                    </div>
+                                    <label for="ubi_lat" class="col-sm-1 control-label">Latitud</label>
+                                    <div class="col-sm-2"> 
+                                        <input type="text" name="ubi_lat" id="ubi_lat" value="" size="50" maxlength="100" class="form-control input-sm" /> 
+                                    </div>
+                                     <label for="ubi_alt" class="col-sm-1 control-label">Altitud</label>
+                                     <div class="col-sm-2">
+                                        <input type="text" name="ubi_alt" id="ubi_alt" value="" size="50" maxlength="100" class="form-control input-sm" />                        
+                                    </div>
+                                </div>
+                            <div class="row  form-group">         
+                                <label for="loc_id" class="col-sm-1 control-label">Localizaci&oacute;n</label>
+                                <div class="col-sm-2">
+                                    <select name="loc_id" id="loc_id"  class="form-control input-sm">
+                                        <option value="" selected=""></option>
+                                        <option value="1">&Aacute;RBOL</option>
+                                        <option value="2">POSTE</option>
+                                        <option value="3">SIN INFORMACI&Oacute;N</option>
+                                    </select>            
+                                </div>
+                                <label for="arb_id" class="col-sm-1 control-label">&Aacute;rbol</label>
+                                <div class="col-sm-2">
+                                    <select name="arb_id" id="arb_id"  class="form-control input-sm"></select>            
+                                </div>
+                                <label for="ubi_ubicacion" class="col-sm-1 control-label">Ubicación</label>
+                                <div class="col-sm-2">
+                                    <textarea type="text" name="ubi_ubicacion" id="ubi_ubicacion" value="" size="50" maxlength="50" class="form-control input-sm"></textarea>
+                                </div>
+                            </div>
+                        </div>                      
+                    </div> 
+                </div> 
+            </div>
+        </div>
+    </body>
+</html>

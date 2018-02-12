@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>PERSONAL TECNICO</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../css/sweetalert.css">
+         <script  src="../../js/jquery-2.1.4.min.js"></script>
+        <script src="../../js/bootstrap.js"></script>
+        <script src="../../js/predioJS.js"></script>
+        <script src="../../js/sweetalert.min.js"></script>
+        <script src="../../js/loginJS.js"></script>
+        <script src="../../js/departamentoJS.js"></script>
+        <script src="../../js/municipioJS.js"></script>
+        <script src="../../js/loteJS.js"></script>
+        <script>
+            $( document ).ready(sesion(), btnback(), loteListar(sessionStorage.Pre_id));
+        </script>
+    </head>
+    <body>
+        <div id="encabezado">
+            <h1> <span><img src="../../img/lote.png" alt="" class="icono-h1"></span>Gesti&oacute;n de Lotes</h1>
+        </div>
+        <!--<div id="navegacion" >
+            <div class="row">
+              <div class="col-lg-offset-3 col-sm-12">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="filtro" id="filtro" placeholder="Filtrar Resultados por..." aria-label="Filtrar">
+                  <span class="input-group-btn">
+                      <button class="btn btn-primary" type="button" onclick="predioListar(document.getElementById('filtro').value)">
+                        <span class="glyphicon glyphicon-search"></span>
+                        Buscar
+                      </button>
+                  </span>
+                </div>
+              </div>
+            </div>
+        </div>-->
+        <br>
+        <div id="botonera">
+            <div class="btn-group-xs" role="group" aria-label="...">
+                <a href="../Predio/Gestion-Predio.html">
+                    <button type="button" class="btn btn-warning">
+                        <span><img src="../../img/atras.png" class=" botonimg"></span>
+                        Atr&aacute;s
+                    </button>
+                </a>  
+              
+                <a href="Frm-Registro-Lote.html">
+                    <button type="button" class="btn btn-success" onclick="">
+                      <span><img src="../../img/agregar.png" class=" botonimg"></span>
+                      Nuevo
+                    </button>
+                </a>
+              
+            </div>
+        </div>
+        <br>
+        <div id="botonera">
+           <div class="btn-group-xs" role="group" aria-label="...">
+               <a href="javascript:LoteId('Historial-Lote.html')">  
+                <button type="button" class="btn btn-primary">
+                    <span><img src="../../img/historial.png" class=" botonimg"></span>
+                    Historial
+                </button>
+              </a>
+              <a href="javascript:LoteId('Actualizar-Lote.html')">
+                <button type="button" class="btn btn-primary">
+                    <span><img src="../../img/actualizar.png" class=" botonimg"></span>
+                    Actualizar
+                </button>
+              </a>
+            </div>
+        </div>
+        <br>
+        <div id="container">
+            <div class="col-md-12" id="resultados">
+                    <table border="1" id="tablaResultados">
+                        <thead class="pfila">
+                            <tr>
+                                <th>#</th>
+                                <th>C&oacute;digo</th>
+                                <th>Nombre</th>
+                                <th>Predio</th>
+                                <th>&Aacute;rea (Ha)</th>
+                                <th>Productor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+            </div>
+            
+        </div>
+        
+        <footer>
+            
+        </footer>
+    </body>
+</html>

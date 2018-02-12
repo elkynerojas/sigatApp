@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>PERSONAL TECNICO</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../css/sweetalert.css">
+        <script src="../../js/productorJS.js"></script>
+        <script  src="../../js/jquery-2.1.4.min.js"></script>
+        <script src="../../js/sweetalert.min.js"></script>
+        <script src="../../js/loginJS.js"></script>
+        <script src="../../js/departamentoJS.js"></script>
+        <script src="../../js/municipioJS.js"></script>
+        <script src="../../js/predioJS.js"></script>
+        <script src="../../js/loteJS.js"></script>
+        
+        <script>
+            $( document ).ready(sesion(), btnback());
+        </script>
+    </head>
+    <body>
+
+        <div id="Frm-Registro-Lote"  class="pagina">
+           
+            <div  class="table-stripe scrollable" id="container">
+                <div class="panel panel-primary">
+                    <div class="panel-heading" style="text-align: center">
+                        <span><img src="../../img/lote.png" class=" botonimg"></span> 
+                        
+                        NUEVO LOTE
+                        <span><img src="../../img/agregar.png" class=" botonimg"></span>
+                    </div> 
+                    <div class="panel-body">
+                        <div class="" style="text-align: center">
+                            <div class="col-sm-12">
+                                <a href="Gestion-Lote.html">
+                                    <button type="button" class="btn btn-outline btn-danger" title="REGRESAR" onclick="">
+                                        <span class="glyphicon glyphicon-remove arrow"></span> CANCELAR
+                                    </button>
+                                </a>
+                                <a href="javascript:loteInsertar()">
+                                    <button type="button" class="btn btn-success" title="GUARDAR REGISTRO">
+                                       <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> REGISTRAR
+                                    </button>
+                                </a>         
+                            </div>                          
+                        </div>
+                        <div class="row col-md-12">
+                            &nbsp;
+                        </div>
+                        <div class="formulario">
+                            
+                            <div class="form-group">
+                                <label for="lot_area" class="col-sm-2 control-label">&Aacute;rea (Ha)</label>
+                                <div class="col-sm-10">
+                                    <input type="number" name="lot_area" id="lot_area" value="" size="50"  class="form-control input-sm"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="lot_descripcion" class="col-sm-2 control-label">Lote</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="lot_descrpicion" id="lot_descripcion" value=""  maxlength="1"  class="form-control input-sm"/>
+                                </div>
+                            </div>
+                        </div>                      
+                    </div> 
+                </div> 
+            </div>
+            <!--<div id="footer" data-position="fixed" data-role="footer" data-theme="a">
+                <div data-role="navbar" >
+                    <ul id="footerBtnListarPersona">
+                            
+                        <li>
+                            <a href="#" id="btnNuevo" class="ui-btn" data-rel="back">
+                                <span class="glyphicon glyphicon-remove arrow"></span> Cancelar
+                            </a>
+                        </li>
+                                 
+                        <li>
+                            <a href="javascript:productorInsertar()">
+                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Registrar
+                            </a>
+                        </li>  
+                    </ul>
+                </div>
+            </div>-->
+        </div>
+        
+    </body>
+</html>

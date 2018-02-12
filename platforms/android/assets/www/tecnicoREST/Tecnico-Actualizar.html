@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+       <title>PERSONAL TECNICO</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/sweetalert.css">
+        <script src="../js/jquery-2.1.4.min.js"></script>
+        <script src="../js/sweetalert.min.js"></script>
+        <script src="../js/loginJS.js"></script>
+        <script src="../js/tecnicoJS.js"></script>
+        <script>
+            $( document ).ready(sesion(), btnback(), tecnicoBuscar());
+        </script>
+    </head>
+    <body>
+        <div  id="Sincronizar" class="pagina">
+            <div id="encabezado">
+               <div class="col-12 row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <img src="../img/logo_sigat.png" class="img-header-sigat">
+                    </div>
+                    <div class="col-1"></div>            
+                </div>     
+
+             </div>
+            <div id="subtitulo" class="col-12" >
+               ACTUALIZAR DATOS 
+            </div>
+            <div id="cuerpo">
+                <div id="botonera">
+                   <div class="btn-group-xs" role="group" aria-label="...">
+                        <a href="TecnicoHome.html">
+                            <button type="button" class="btn btn-warning">
+                                <span><img src="../img/atras.png" class=" botonimg"></span>   
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div data-role="content" class="table-stripe scrollable" id="container">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading" style="text-align: center">
+                            <i class="glyphicon glyphicon-user "></i> 
+                            DATOS DE USUARIO
+                        </div> 
+                        <div class="panel-body">
+                           <form name="frm-Tecnico-Actualizar" id="frm-Tecnico-Actualizar" action="javascript:tecnicoActualizar()">
+                            <div class="" style="text-align: center">
+                                <div class="col-sm-12">
+                                    <button type="button" class="btn btn-outline btn-danger" title="REGRESAR" onclick="history.go(-1); return false;">
+                                        <span class="glyphicon glyphicon-remove arrow"></span> CANCELAR
+                                    </button>
+                                    <button type="submit" class="btn btn-success"  title="GUARDAR REGISTRO">
+                                       <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> ACTUALIZAR
+                                    </button>         
+                                </div>                          
+                            </div>
+                            <div class="row col-md-12">
+                                &nbsp;
+                            </div>
+                            <div class="formulario">
+                                <div class="row  form-group">
+                                    <label for="per_cc" class="col-sm-1 control-label">No. Documento</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" name="per_cc" id="per_cc" readonly="" value="" size="20" maxlength="20" class="form-control input-sm" />
+                                        <input type="hidden" name="per_cc_aux" id="per_cc_aux">
+                                    </div>
+                                    <label for="per_nombre" class="col-sm-1 control-label">Nombre</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" name="per_nombre" id="per_nombre" value="" size="50" maxlength="100" class="form-control input-sm"/>
+                                    </div>
+                                    <label for="per_apellido" class="col-sm-1 control-label">Apellido</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" name="per_apellido" id="per_apellido" value="" size="50" maxlength="100" class="form-control input-sm"/>
+                                    </div>
+                                    <label for="gen_id" class="col-sm-1 control-label">Genero</label>
+                                    <div class="col-sm-2"> 
+                                        <select name="gen_id" id="gen_id"  class="form-control input-sm">
+                                            
+                                        </select>
+                                    </div>
+                                </div>                        
+
+                                <div class="row  form-group">   
+                                    
+                                    <label for="per_telefono" class="col-sm-1 control-label">Tel&eacute;fono</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" name="per_telefono" id="per_telefono" value="" size="50" maxlength="50" class="form-control input-sm"/>
+                                    </div>
+                                    <label for="per_direccion" class="col-sm-1 control-label">Direcci&oacute;n</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" name="per_direccion" id="per_direccion" value="" size="50" maxlength="100" class="form-control input-sm" />                        
+                                    </div>
+                                    <label for="per_correo" class="col-sm-1 control-label">Correo E.</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" name="per_correo" id="per_correo" value="" size="50" maxlength="100" class="form-control input-sm"/>            
+                                    </div>
+                                </div>
+                                            
+                            </div>
+                        </form>                     
+                        </div> 
+                    </div> 
+                </div>
+            </div>
+            <div class="col-xs-12" data-role="footer" style="text-align:center; margin-top:2%; width:100%; font-size: 70%; background-color: #FFF; border: none">
+                <b>
+                    Instituto Colombiano Agropecuario<br>
+                    Instituto Superior de Educación Rural-ISER<br>
+                    Colombia,2017
+                </b>
+            </div>
+        </div>
+       
+    </body>
+</html>

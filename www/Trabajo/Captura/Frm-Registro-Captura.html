@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>PERSONAL TECNICO</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<link rel="stylesheet" type="text/css" href="../../css/jquery.mobile-1.4.5.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.mobile.theme-1.4.5.min.css">-->
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../../css/sweetalert.css">
+        <script  src="../../js/jquery-2.1.4.min.js"></script>
+        <script src="../../js/sweetalert.min.js"></script>
+        <script src="../../js/loginJS.js"></script>
+        <script src="../../js/esmJS.js"></script>
+        <script src="../../js/ubiJS.js"></script>
+        <script src="../../js/capJS.js"></script>
+        <script src="../../js/rutaJS.js"></script>
+        
+        <script>
+            $( document ).ready(sesion(), btnback(), rutaListar(), esmListar());
+        </script>
+    </head>
+    <body>
+        <div id="Frm-Registro-Trampeo"  class="pagina"> 
+            <div  class="table-stripe scrollable" id="container">
+                <div class="panel panel-primary">
+                    <div class="panel-heading" style="text-align: center">
+                        <span><img src="../../img/captura.png" class=" botonimg"></span> 
+                        NUEVO REGISTRO DE CAPTURA
+                        <span><img src="../../img/agregar.png" class=" botonimg"></span>
+                    </div> 
+                    <div class="panel-body">
+                        <div class="" style="text-align: center">
+                            <div class="col-sm-12">
+                                <a href="Gestion-Captura.html">
+                                    <button type="button" class="btn btn-outline btn-danger" title="REGRESAR" onclick= "">
+                                        <span class="glyphicon glyphicon-remove arrow"></span> CANCELAR
+                                    </button>
+                                </a>
+                                <a href="javascript:capInsertar()">
+                                    <button type="button" class="btn btn-success" title="GUARDAR REGISTRO">
+                                       <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> REGISTRAR
+                                    </button>
+                                </a>         
+                            </div>                          
+                        </div>
+                        <div class="formulario">
+                            <div class="row  form-group">
+                                <label for="rut_id" class="col-sm-1 control-label">Ruta</label>
+                                <div class="col-sm-2">
+                                    <select name="rut_id" id="rut_id"  class="form-control input-sm" onchange="ubiListarTrampas(document.getElementById('rut_id').value)"></select>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label for="vig_id" class="col-sm-1 control-label">Vigilancia</label>
+                                    <select name="vig_id" id="vig_id"  class="form-control input-sm">
+                                        <option value="2" selected="">NATIVAS Y CERATITIS</option>
+                                        <option value="3">EX&Oacute;TICAS</option>
+                                   </select>
+                                </div>
+                            </div>  
+                            <div class="row  form-group">
+                                <label for="tra_id" class="col-sm-1 control-label">Trampa</label>
+                                <div class="col-sm-2">
+                                    <select name="tra_id" id="tra_id"  class="form-control input-sm" onchange="ubiAsignarPredio(document.getElementById('tra_id').value)">     
+                                    </select>
+                                    <input type="hidden" name="pre_id", id="pre_id">
+                                </div>
+                            </div>                        
+                            <div class="row  form-group">
+                                 <label for="esm_id" class="col-sm-1 control-label">Especie</label>
+                                <div class="col-sm-2">
+                                    <select name="esm_id" id="esm_id"  class="form-control input-sm"></select>
+                                </div>
+                            </div>       
+                                <div class="row  form-group">      
+                                    <label for="cap_fecha_cap" class="col-sm-1 control-label">Fecha Captura</label>
+                                    <div class="col-sm-2"> 
+                                        <input type="date" name="cap_fecha_cap" id="cap_fecha_cap" value="" size="50" maxlength="100" class="form-control input-sm" /> 
+                                    </div>
+                                    <label for="cap_machos" class="col-sm-1 control-label">Machos</label>
+                                    <div class="col-sm-2"> 
+                                        <input type="number" name="cap_machos" id="cap_machos" value="" size="50" maxlength="100" class="form-control input-sm" /> 
+                                    </div>
+                                     <label for="cap_hembras" class="col-sm-1 control-label">Hembras</label>
+                                     <div class="col-sm-2">
+                                        <input type="number" name="cap_hembras" id="cap_hembras" value="" size="50" maxlength="100" class="form-control input-sm" />                        
+                                    </div>
+                                </div>
+                            <div class="row  form-group">         
+                                <label for="fen_id" class="col-sm-1 control-label">Fenologia</label>
+                                <div class="col-sm-2">
+                                    <select name="fen_id" id="fen_id"  class="form-control input-sm">
+                                        <option value="" selected=""></option>
+                                        <option value="1">VEGETATIVO</option>
+                                        <option value="2">FLORACION</option>
+                                        <option value="3">FRUCTIFICACION</option>
+                                        <option value="4">DESCANSO</option>
+                                        <option value="5">NO INFORMA</option>
+                                        <option value="6">NO APLICA</option>
+                                    </select>            
+                                </div>
+                               <label for="cap_fecha_dia" class="col-sm-1 control-label">Fecha Reporte Diagnóstico</label>
+                                    <div class="col-sm-2"> 
+                                        <input type="date" name="cap_fecha_dia" id="cap_fecha_dia" value="" size="50" maxlength="100" class="form-control input-sm" /> 
+                                    </div>
+                                <label for="cap_mue" class="col-sm-1 control-label">Código Muestra</label>
+                                <div class="col-sm-2">
+                                    <input type="number" name="cap_mue" id="cap_mue" value="" size="50" maxlength="100" class="form-control input-sm" />   
+                                </div>
+                            </div>
+                        </div>                      
+                    </div> 
+                </div> 
+            </div>
+        </div>
+    </body>
+</html>

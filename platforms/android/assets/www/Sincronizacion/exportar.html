@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+       <title>PERSONAL TECNICO</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/sweetalert.css">
+        <script src="../js/jquery-2.1.4.min.js"></script>
+        <script src="../js/sweetalert.min.js"></script>
+        <script src="../js/loginJS.js"></script>
+        <script src="../js/sourceJS.js"></script>
+        <script src="../js/departamentoJS.js"></script>
+        <script src="../js/municipioJS.js"></script>
+        <script src="../js/arbolJS.js"></script>
+        <script src="../js/rutaJS.js"></script>
+        <script src="../js/esmJS.js"></script>
+        <script src="../js/administradorJS.js"></script>
+        <script src="../js/centroAcopioJS.js"></script>
+        <script src="../js/tecnicoJS.js"></script>
+        <script src="../js/productorJS.js"></script>
+        <script src="../js/predioJS.js"></script>
+        <script src="../js/loteJS.js"></script>
+        <script src="../js/trampaJS.js"></script>
+        <script src="../js/ubiJS.js"></script>
+        <script>
+            $( document ).ready(sesion(), btnback(), rutaListarOL());
+        </script>
+    </head>
+    <body>
+        <div  id="Sincronizar" class="pagina">
+            <div id="encabezado">
+               <div class="col-12 row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <img src="../img/logo_sigat.png" class="img-header-sigat">
+                    </div>
+                    <div class="col-1"></div>            
+                </div>     
+
+             </div>
+            <div id="subtitulo" class="col-12" >
+               SINCRONIZACI&Oacute;N DE DATOS
+            </div>
+            <div id="cuerpo">
+                <div id="cargando" style="display: none">
+                    <img src="../img/loading.gif" width="100px" height="100px">
+                    <br><br>
+                    <p>Importando Datos ...</p>
+                </div>
+                <div data-role="content" class="table-stripe scrollable" id="container">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading" style="text-align: center">
+                            <i class="glyphicon glyphicon-user "></i> 
+                            <i class="glyphicon glyphicon-edit"></i>
+                            EXPORTAR DATOS
+                        </div> 
+                        <div class="panel-body">
+                            <div class="" style="text-align: center">
+                                <div class="col-sm-12">
+                                    <button type="button" class="btn btn-outline btn-danger" title="REGRESAR" onclick="sincVolver()">
+                                        <span class="glyphicon glyphicon-remove arrow"></span> CANCELAR
+                                    </button>
+                                    <button type="button" class="btn btn-success" onclick="confirmarExp()" title="GUARDAR">
+                                       <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> EXPORTAR
+                                    </button>         
+                                </div>                          
+                            </div>
+                            <div class="row col-md-12">
+                                &nbsp;
+                            </div>
+                            <div class="formulario">
+                                <div class="row  form-group">      
+                                        <label for="rut_id" class="col-sm-1 control-label">SLECCIONE UNA RUTA</label>
+                                        <div class="col-sm-2"> 
+                                           <select name="rut_id" id="rut_id"  class="form-control input-sm"></select> 
+                                        </div>     
+                                </div>
+                            </div>
+                            <div id="Advertencia">
+                                <p>
+                                    UNA VEZ QUE LOS DATOS SEAN EXPORTADOS,
+                                    LA INFORMACIÓN SE CARGARÁ A LA BASE DE DATOS PRINCIPAL.
+                                    SI ESTÁ SEGURO DE REALIZAR LA OPERACIÓN PRESIONE EXPORTAR 
+                                </p>
+                            </div>                      
+                        </div> 
+                    </div> 
+                </div>
+            </div>
+            <div class="col-xs-12" data-role="footer" style="text-align:center; margin-top: 10%; width:100%; font-size: 70%; background-color: #FFF; border: none">
+                <b>
+                    Instituto Colombiano Agropecuario<br>
+                    Instituto Superior de Educación Rural-ISER<br>
+                    Colombia,2017
+                </b>
+            </div>
+        </div>
+       
+    </body>
+</html>

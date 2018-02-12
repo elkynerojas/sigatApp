@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+  <head>
+    <title>PERSONAL TECNICO</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../css/sweetalert.css">
+    <script  src="../../js/jquery-2.1.4.min.js"></script>
+    <script src="../../js/bootstrap.js"></script>
+    <script src="../../js/productorJS.js"></script>
+    <script src="../../js/sweetalert.min.js"></script>
+    <script src="../../js/loginJS.js"></script>
+    <script src="../../js/ubiJS.js"></script>
+    <script>
+      $( document ).ready(sesion(), btnback());
+    </script>
+  </head>
+  <body>
+    <div id="encabezado">
+      <h1> <span><img src="../../img/trampeo.png" alt="" class="icono-h1"></span>Ubicaci&oacute;n de Trampas</h1>
+    </div>
+    <div id="navegacion" >
+      <div class="row">
+        <div class="col-lg-offset-3 col-sm-12">
+          <div class="input-group">
+            <input type="text" class="form-control" name="filtro" id="filtro" placeholder="Filtrar Resultados por..." aria-label="Filtrar">
+            <span class="input-group-btn">
+              <button id="btnBuscarUbi" class="btn btn-primary" type="button" onclick="ubiListar(document.getElementById('filtro').value)">
+                <span class="glyphicon glyphicon-search"></span>
+                Buscar
+              </button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div id="botonera">
+      <div class="btn-group-xs" role="group" aria-label="...">
+        <a href="../trabajo.html">
+          <button type="button" class="btn btn-warning">
+            <span><img src="../../img/atras.png" class=" botonimg"></span>
+            Atr&aacute;s
+          </button>
+        </a>  
+        <a href="Frm-Registro-Trampeo.html">
+          <button type="button" class="btn btn-success" onclick="">
+            <span><img src="../../img/agregar.png" class=" botonimg"></span>
+            Nuevo
+          </button>
+        </a>  
+      </div>
+    </div>
+    <br><br><br>
+    <div id="container">
+      <div class="col-md-12" id="resultados">
+        <table border="1" id="tablaResultados" class="table table-responsive">
+          <thead class="pfila">
+            <tr>
+              <th>#</th>
+              <th>Código Vigilancia</th>
+              <th>Región</th>
+              <th>Dpto</th>
+              <th>Municipio</th>
+              <th>Registro de la Ruta</th>
+              <th>Código Ruta</th>
+              <th>Código único de Trampa</th>
+              <th>Tipo de Trampa</th>
+              <th>Número de Trampa</th>
+              <th>Atrayente</th>
+              <th>Fecha Instalación</th>
+              <th>Longitud</th>
+              <th>Latitud</th>
+              <th>Altitud</th>
+              <th>Ubicación</th>
+              <th>Nombre Predio</th>
+              <th>Propietario</th>
+              <th>Código Localización</th>
+              <th>Árbol</th>
+              <th>Nombre Ruta</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>  
+    </div>
+    <footer></footer>
+  </body>
+</html>

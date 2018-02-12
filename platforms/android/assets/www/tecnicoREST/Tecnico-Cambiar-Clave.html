@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+       <title>PERSONAL TECNICO</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/sweetalert.css">
+        <script src="../js/jquery-2.1.4.min.js"></script>
+        <script src="../js/sweetalert.min.js"></script>
+        <script src="../js/loginJS.js"></script>
+        <script src="../js/tecnicoJS.js"></script>
+        <script>
+            $( document ).ready(sesion(), btnback(), tecnicoBuscar());
+        </script>
+    </head>
+    <body>
+        <div  id="Sincronizar" class="pagina">
+            <div id="encabezado">
+               <div class="col-12 row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <img src="../img/logo_sigat.png" class="img-header-sigat">
+                    </div>
+                    <div class="col-1"></div>            
+                </div>     
+
+             </div>
+            <div id="subtitulo" class="col-12" >
+               <script>
+                 javascript:document.write(sessionStorage.tec_nombre);
+                </script>
+            </div>
+            <div id="cuerpo">
+                <div id="botonera">
+                   <div class="btn-group-xs" role="group" aria-label="...">
+                      <a href="TecnicoHome.html">
+                            <button type="button" class="btn btn-warning">
+                                <span><img src="../img/atras.png" class=" botonimg"></span>
+                                
+                            </button>
+                        </a>
+                      <a href="Tecnico-">  
+                        <button type="button" class="btn btn-success">
+                          <span><img src="../img/clave.png" class=" botonimg"></span>
+                          
+                        </button>
+                      </a>
+                      <a href="Tecnico-Actualizar.html">
+                        <button type="button" class="btn btn-primary">
+                            <span><img src="../img/actualizar.png" class=" botonimg"></span>
+                            
+                        </button>
+                      </a>
+                    </div>
+                </div>
+                <div data-role="content" class="table-stripe scrollable" id="container">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading" style="text-align: center">
+                            <i class="glyphicon glyphicon-user "></i> 
+                            DATOS DE USUARIO
+                        </div> 
+                        <div class="panel-body">
+                             <form class="formulario" action="javascript:tecnicoClave()">
+                            <div class="" style="text-align: center">
+                                <div class="col-sm-12">
+                                    <button type="button" class="btn btn-outline btn-danger" title="REGRESAR" onclick="window.location = 'Tecnico-Perfil.html'" return false;">
+                                        <span class="glyphicon glyphicon-remove arrow"></span> CANCELAR
+                                    </button>
+                                    <button type="submit" class="btn btn-success"  title="GUARDAR REGISTRO">
+                                       <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> CAMBIAR
+                                    </button>         
+                                </div>                          
+                            </div>
+                            <div class="row col-md-12">
+                                &nbsp;
+                            </div>
+                            <label for="usu_contrasena" class="col-sm-1 control-label">Contraseña Acutal</label>
+                            <div class="col-sm-2">
+                                <input type="password" name="usu_contrasena" id="usu_contrasena" value="" size="50" maxlength="100" class="form-control input-sm"/>
+                            </div>
+                            <label for="usu_contrasena_new" class="col-sm-1 control-label">Contraseña Nueva</label>
+                            <div class="col-sm-2">
+                                <input type="password" name="usu_contrasena_new" id="usu_contrasena_new" value="" size="50" maxlength="100" class="form-control input-sm"/>
+                            </div>
+                            <label for="conf_contrasena" class="col-sm-1 control-label">Confirmar</label>
+                            <div class="col-sm-2">
+                                <input type="password" name="conf_contrasena" id="conf_contrasena" value="" size="50" maxlength="100" class="form-control input-sm"/>
+                            </div>
+                        </form>                    
+                        </div> 
+                    </div> 
+                </div>
+            </div>
+            <div class="col-xs-12" data-role="footer" style="text-align:center; margin-top:2%; width:100%; font-size: 70%; background-color: #FFF; border: none">
+                <b>
+                    Instituto Colombiano Agropecuario<br>
+                    Instituto Superior de Educación Rural-ISER<br>
+                    Colombia,2017
+                </b>
+            </div>
+        </div>
+       
+    </body>
+</html>

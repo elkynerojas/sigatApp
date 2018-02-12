@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <!--<link rel="icon" type="image/png" href="../../img/logo_mosca.png" />-->
+        <title>SIGAT</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <link rel="stylesheet" href="../../css/sweetalert.css">
+        <script type="text/javascript" src="../../js/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="../../js/bootstrap.js"></script>
+        <script type="text/javascript" src="../../js/loginJS.js"></script>
+        <script type="text/javascript" src="../../js/sweetalert.min.js"></script>
+        <script type="text/javascript" src="../../js/trampaJS.js"></script>
+        <script>
+            $( document ).ready(sesion(), btnback(), trampaBuscar()); 
+
+             
+ </script>
+    </head>
+    <body>
+        <!--HEADER-->
+
+       <div id="encabezado">
+            <h1> <span><img src="../../img/trampa.png" alt="" class="icono-h1"></span>Gesti&oacute;n de Trampas</h1>
+        </div>
+        <!--MENU-->
+        <div id="botonera">
+            <div class="btn-group-xs" role="group" aria-label="...">
+                <a href="Gestion-Trampa.html">
+                    <button type="button" class="btn btn-warning">
+                        <span><img src="../../img/atras.png" class=" botonimg"></span>
+                        Atr&aacute;s
+                    </button>
+                </a>  
+            </div>
+        </div>
+        <!--container-->
+        <div id="container" class="col-md-12">
+            <!--formulario-->
+            <div class="panel panel-primary">
+                <div class="panel-heading" style="text-align: center">
+                    <i class="glyphicon glyphicon-user "></i> 
+                    <i class="glyphicon glyphicon-calendar"></i>
+                    HISTORIAL TRAMPA
+                </div> 
+                <div class="panel-body">
+                   
+                    <div class="row col-md-12">
+                        &nbsp;
+                    </div>
+                    <div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10 panel-primary" id="HistorialTrampa"></div>
+                    </div>                     
+                </div> 
+            </div>    
+        </div>
+        <div class=" col-md-12 footer">
+            Instituto Colombiano Agropecuario<br>
+            Instituto Superior de Educaci&oacute;n Rural -ISER<br>
+            2017
+        </div>
+    </body>
+</html>
